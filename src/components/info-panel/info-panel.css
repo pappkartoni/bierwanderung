@@ -89,3 +89,12 @@
     font-variation-settings: 'wght' 100;
   }
 }
+
+@media only screen and (max-height: 743px) {
+  :host {
+    top: unset;
+    left: unset;
+    bottom: 32px;
+    right: 24px;
+  }
+}
