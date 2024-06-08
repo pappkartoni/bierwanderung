@@ -58,6 +58,9 @@ async function main() {
     clickableIcons: false
   });
 
+  window.addEventListener('keypress', (e: KeyboardEvent) => {
+    if (e.key === ' ') infoPanel.paused = !infoPanel.paused;
+  });
   map.addListener('drag', () => (infoPanel.autoPan = false));
 
   await loadTripData();
