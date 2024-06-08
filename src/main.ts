@@ -140,5 +140,8 @@ function tick() {
   }
 
   currentTime += 1e5;
-  if (currentTime >= new Date(endDate).getTime()) infoPanel.paused = true;
+  if (currentTime >= new Date(endDate).getTime()) {
+    infoPanel.paused = true;
+    currentTime = new Date(startDate).getTime();
+  }
 }
