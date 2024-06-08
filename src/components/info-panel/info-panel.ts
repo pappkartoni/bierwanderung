@@ -26,7 +26,7 @@ export default class InfoPanelElement extends LitElement {
             <div class="label">Beer</div>
             <div class="value">
               <a
-                href="https://raw.githubusercontent.com/pappkartoni/bierwanderung/main/src/assets/beer.json?token=GHSAT0AAAAAACTLEHRBUNPIVHYVUENRQGC6ZTDUJSQ"
+                href="https://raw.githubusercontent.com/pappkartoni/bierwanderung/main/src/assets/beer.json"
                 >Raw Data</a
               >
             </div>
