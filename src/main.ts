@@ -116,6 +116,9 @@ function tick() {
       coords: p.coords.filter((c) => c.time <= currentTime)
     }));
 
+  const currentDate = new Date(currentTime);
+  infoPanel.date = currentDate;
+
   const flosBeer = drunkBeers.filter((b) => b.by === 'F' || b.by === 'both');
   const nicosBeer = drunkBeers.filter((b) => b.by === 'N' || b.by === 'both');
   beerMeterFlo.count = flosBeer.length;
@@ -143,7 +146,7 @@ function tick() {
     map.panTo({lat: liveCoord[1], lng: liveCoord[0]});
   }
 
-  currentTime += 1e5;
+  currentTime += infoPanel.speed * (currentDate.getHours() < 7 ? 1e6 : 1e5);
   if (currentTime >= new Date(endDate).getTime()) {
     infoPanel.paused = true;
     currentTime = new Date(startDate).getTime();

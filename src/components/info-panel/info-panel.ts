@@ -14,6 +14,12 @@ export default class InfoPanelElement extends LitElement {
   @property()
   autoPan: boolean = true;
 
+  @property()
+  date: Date = new Date('2024-06-01T05:54:38.000Z');
+
+  @property()
+  speed: number = 1;
+
   override render() {
     return html`
       <div class="info-panel">
@@ -44,6 +50,22 @@ export default class InfoPanelElement extends LitElement {
               >
             </div>
           </div>
+        </div>
+        <div class="time-info">
+          <div class="speed">
+            <label for="speed">Speed</label>
+            <input
+              id="speed"
+              type="number"
+              min="0.01"
+              max="10"
+              value=${this.speed}
+              step="0.01"
+              @change=${(e: InputEvent) =>
+                (this.speed = Number((e.target as HTMLInputElement).value))}
+            />
+          </div>
+          <div class="date">${this.date.toLocaleString()}</div>
         </div>
         <div class="control-buttons">
           <span
