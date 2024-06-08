@@ -1,0 +1,55 @@
+:host {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+
+.info-panel {
+  display: flex;
+  flex-direction: column;
+  background: #f5ecda;
+  padding: 8px;
+  border-radius: 4px;
+  color: #6e4921;
+  width: 200px;
+
+  .info-table {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #6e4921;
+
+      .label {
+        font-weight: 700;
+      }
+
+      a {
+        text-decoration: none;
+        color: #6e4921;
+      }
+    }
+  }
+}
+
+.control-buttons {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.material-symbols-outlined {
+  cursor: pointer;
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+
+  &.inactive {
+    font-variation-settings: 'wght' 100;
+  }
+}

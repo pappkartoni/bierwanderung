@@ -1,0 +1,34 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  height: 100vh;
+}
+
+.beer-meters {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  bottom: 32px;
+  left: 24px;
+}
+.material-symbols {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Icons Outlined';
+}
