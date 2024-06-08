@@ -36,7 +36,12 @@ export default class InfoPanelElement extends LitElement {
           <div class="row">
             <div class="label">Photos</div>
             <div class="value">
-              <a href="google.com" target="_blank" rel="noopener noreferrer">Link</a>
+              <a
+                href="https://photos.app.goo.gl/D2hT4QLcgpHDsRk28"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Link</a
+              >
             </div>
           </div>
         </div>

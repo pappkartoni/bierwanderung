@@ -17,6 +17,11 @@ export default class BeerMeterElement extends LitElement {
   @property()
   public text: string = '';
 
+  @property()
+  public beer: number = 0;
+  @property()
+  public hover = false;
+
   override render() {
     const beerLengths = [];
 
@@ -24,13 +29,19 @@ export default class BeerMeterElement extends LitElement {
       beerLengths.push(html`<img src=${beerMiddleUrl} />`);
     }
     return html`
-      <div class="beer-meter">
+      <div
+        class="beer-meter"
+        @mouseenter=${() => (this.hover = true)}
+        @mouseleave=${() => (this.hover = false)}
+      >
         <div class="beer">
           <img src=${beerTopUrl} />
           ${beerLengths}
           <img src=${beerBottomUrl} />
         </div>
-        <div class="beer-label">${this.text.substring(0, 7)}</div>
+        <div class="beer-label">
+          ${this.hover ? this.beer.toFixed(1) + 'l' : this.text.substring(0, 4)}
+        </div>
       </div>
     `;
   }
