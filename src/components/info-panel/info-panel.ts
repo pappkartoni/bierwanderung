@@ -27,13 +27,17 @@ export default class InfoPanelElement extends LitElement {
             <div class="value">
               <a
                 href="https://raw.githubusercontent.com/pappkartoni/bierwanderung/main/src/assets/beer.json"
+                target="_blank"
+                rel="noopener noreferrer"
                 >Raw Data</a
               >
             </div>
           </div>
           <div class="row">
             <div class="label">Photos</div>
-            <div class="value"><a href="google.com">Link</a></div>
+            <div class="value">
+              <a href="google.com" target="_blank" rel="noopener noreferrer">Link</a>
+            </div>
           </div>
         </div>
         <div class="control-buttons">
