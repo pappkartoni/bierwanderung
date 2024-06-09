@@ -130,7 +130,7 @@ function tick() {
   beerMeterNico.beer = nicosBeer.reduce((a, b) => a + b.volume, 0);
 
   const layer = new PathLayer<Path>({
-    id: 'path' + currentTime,
+    id: 'path',
     data: completedPath,
     getPath: (p) => p.coords.map((c) => c.coord) as PathGeometry,
     getColor: (p) => (p.type === 'Walking' ? [235, 168, 36] : [245, 236, 218]),
@@ -149,9 +149,12 @@ function tick() {
     map.panTo({lat: liveCoord[1], lng: liveCoord[0]});
   }
 
-  currentTime += infoPanel.speed * (currentDate.getHours() < 7 ? 1e6 : 1e5);
-  if (currentTime >= new Date(endDate).getTime()) {
+  if (currentTime > new Date(endDate).getTime()) {
     infoPanel.paused = true;
     currentTime = new Date(startDate).getTime();
+  } else {
+    currentTime +=
+      infoPanel.speed *
+      (currentDate.getHours() < 7 ? 1e6 : currentDate.getHours() > 22 ? 5e5 : 1e5);
   }
 }
